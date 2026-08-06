@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
   --purple500: #281154;
   --purple300: #270084;
   --purple600: #1b0058;
-  --red600:    #dc0000;
-  --body:      #f9f6ff;
+  --red600: #dc0000;
+  --body: #f9f6ff;
   --max-width: 1200px;
 }
-
 
 * {
   margin: 0;
@@ -42,31 +41,51 @@ a {
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 8px;
 }
 
 header {
   background-color: var(--purple300);
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  height: 70px;
   top: 0;
   z-index: 100;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  /* display: flex;
+  justify-content: space-between; 
+  align-items: center; */
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  height: 100%;
   color: white;
+}
+.manu {
+  display: none;
+  gap: 5px;
+  flex-direction: column;
+}
+.manuchild {
+  height: 3px;
+  width: 20px;
+  background: white;
 }
 
 .logo {
   font-size: 32px;
   font-weight: 600;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 button {
@@ -81,13 +100,14 @@ button:hover {
   transition: 0.2s ease-in-out;
 }
 
-
 nav ul {
   display: flex;
   gap: 20px;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 6px 20px;
+  border-radius: 15px;
   background: white;
+  align-items: center;
+  margin-right: 20px;
 }
 
 nav ul li {
@@ -103,7 +123,7 @@ nav ul li:hover {
 
 /* --Hero-Section--*/
 
-.hero-section{
+.hero-section {
   position: relative;
   min-height: 100vh;
   display: grid;
@@ -113,7 +133,7 @@ nav ul li:hover {
   overflow: hidden;
 }
 
-.hero-section::before{
+.hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -129,7 +149,7 @@ nav ul li:hover {
   z-index: 0;
 }
 
-.hero-section::after{
+.hero-section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -139,7 +159,7 @@ nav ul li:hover {
   z-index: 1;
 }
 
-.hero-section .container{
+.hero-section .container {
   position: relative;
   z-index: 2;
 
@@ -148,22 +168,21 @@ nav ul li:hover {
   gap: 30px;
 }
 
-.hero-section h1{
+.hero-section h1 {
   font-size: 96px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-.hero-section h3{
+.hero-section h3 {
   font-size: 32px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.hero-section p{
+.hero-section p {
   max-width: 800px;
   margin: 0 auto;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
-
 
 /* --Music-section--*/
 
@@ -179,9 +198,7 @@ nav ul li:hover {
   align-items: center;
   gap: 30px;
   color: white;
-
 }
-
 
 .iphone-ipad-image {
   margin-top: -400px;
@@ -199,7 +216,6 @@ nav ul li:hover {
   background: var(--purple300);
   color: white;
   border-radius: 8px;
-  
 }
 
 .about-music {
@@ -211,10 +227,7 @@ nav ul li:hover {
   margin-bottom: 50px;
 }
 
-
-
-
-.video-section{
+.video-section {
   position: relative;
   min-height: 800px;
   overflow: hidden;
@@ -223,7 +236,7 @@ nav ul li:hover {
   text-align: center;
 }
 
-.video-section::before{
+.video-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -238,7 +251,7 @@ nav ul li:hover {
   z-index: 0;
 }
 
-.video-section::after{
+.video-section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -248,13 +261,13 @@ nav ul li:hover {
   z-index: 1;
 }
 
-.video-section .container{
+.video-section .container {
   position: relative;
-  z-index: 23; 
+  z-index: 23;
   color: white;
 }
 
-.video-section .container{
+.video-section .container {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -268,7 +281,6 @@ nav ul li:hover {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 .gift-section {
   display: flex;
@@ -306,56 +318,62 @@ nav ul li:hover {
   display: flex;
   justify-content: center;
   color: black;
-
 }
 
 .top-footer h4 {
   cursor: pointer;
 }
 
-
 .gift-card img,
 .mac-image img,
-.iphone-ipad-image img{
-  transition:0.3s ease;
+.iphone-ipad-image img {
+  transition: 0.3s ease;
 }
 
 .gift-card img:hover,
 .mac-image img:hover,
-.iphone-ipad-image img:hover{
-  transform:scale(1.03);
+.iphone-ipad-image img:hover {
+  transform: scale(1.03);
 }
 
 @media (max-width: 768px) {
-   nav {
-    flex-direction: column;
+  nav {
+    flex-direction: row;
     gap: 15px;
-   }
+  }
 
-   nav ul {
+  nav ul {
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
-   }
-
-   .hero-section{
-    padding:20px;
+  }
+  .manu {
+    display: flex;
+    padding-right: 20px;
+  }
+  .manu:hover + nav ul {
+    display: flex;
+  }
+  .hero-section {
+    padding: 20px;
+    min-height: 50vh;
   }
 
-  .hero-section h1{
-    font-size:60px;
+  .hero-section h1 {
+    font-size: 60px;
   }
 
-  .hero-section h3{
-    font-size:24px;
+  .hero-section h3 {
+    font-size: 24px;
   }
 
-  .hero-section p{
-    font-size:16px;
+  .hero-section p {
+    font-size: 16px;
   }
 
-   .iphone-ipad-image img,
+  .iphone-ipad-image img,
   .mac-image img,
-  .gift-card img{ 
+  .gift-card img {
     width: 100%;
     height: auto;
   }
@@ -367,7 +385,7 @@ nav ul li:hover {
 
   .about-music {
     padding-top: 180px;
-    padding-left: 20px; 
+    padding-left: 20px;
     padding-right: 20px;
   }
 
@@ -382,10 +400,9 @@ nav ul li:hover {
     flex-direction: column;
     gap: 30px;
     text-align: center;
-
   }
 
-  .top-footer h4{
+  .top-footer h4 {
     width: 60%;
     margin: 0 auto 10px;
   }
